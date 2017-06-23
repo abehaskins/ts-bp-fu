@@ -1,6 +1,5 @@
-import {exec} from "child_process";
-import * as path from "path";
+import * as functions from "firebase-functions";
 
-export function Perform(text: string): Promise<string> {
-  return Promise.resolve(`A {text} promise!`);
-}
+export const helloWorld = functions.https.onRequest((request, response) => {
+  response.send("Hello from Firebase!");
+});
